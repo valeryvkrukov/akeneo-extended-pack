@@ -1,0 +1,14 @@
+parameters:
+    extended_pack.factory.value.accessories_list.class: ExtendedPack\Bundle\Factory\Value\AccessoriesListValueFactory
+
+services:
+    extended_pack.factory.value.accessories_list:
+        class: '%extended_pack.factory.value.accessories_list.class%'
+        public: false
+        arguments:
+            - '%extended_pack_catalog.model.accessories_list.class%'
+            - '%extended_pack_catalog.model.accessories_list_item.class%'
+            - '%extended_pack_catalog.entity.value.accessories_list.class%'
+            - 'extended_pack_catalog_accessories_list'
+        tags:
+            - { name: pim_catalog.factory.value }

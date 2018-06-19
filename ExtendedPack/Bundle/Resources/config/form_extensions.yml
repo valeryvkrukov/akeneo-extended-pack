@@ -1,0 +1,9 @@
+extensions:
+    extended-pack-accessories-list-select2:
+        module: extended-pack/accessories-list-form
+        parent: pim-product-edit-form-attributes
+        targetZone: self
+        position: 100
+
+attribute_fields:
+    extended_pack_catalog_accessories_list: extended-pack/accessories-list-field

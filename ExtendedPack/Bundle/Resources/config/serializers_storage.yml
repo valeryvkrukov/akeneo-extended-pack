@@ -1,0 +1,10 @@
+parameters:
+    extended_pack_catalog.normalizer.storage.accessories_list_item.class: ExtendedPack\Bundle\Normalizer\Storage\AccessoriesListItemNormalizer
+
+services:
+    extended_pack_catalog.normalizer.storage.accessories_list_item:
+        class: '%extended_pack_catalog.normalizer.storage.accessories_list_item.class%'
+        arguments:
+            - '@extended_pack_catalog.normalizer.standard.accessories_list_item'
+        tags:
+            - { name: pim_serializer.normalizer, priority: 90 }

@@ -1,0 +1,19 @@
+parameters:
+    extended_pack.array_converter.flat_to_standard.accessories_list.class: ExtendedPack\Bundle\ArrayConverter\FlatToStandard\Product\ValueConverter\AccessoriesListConverter
+    extended_pack.array_converter.standard_to_flat.accessories_list.class: ExtendedPack\Bundle\ArrayConverter\StandardToFlat\Product\ValueConverter\AccessoriesListConverter
+
+services:
+    extended_pack.array_converter.standard_to_flat.product.value_converter.accessories_list:
+        class: '%extended_pack.array_converter.standard_to_flat.accessories_list.class%'
+        arguments:
+            - '@pim_connector.array_converter.flat_to_standard.product.attribute_columns_resolver'
+            - ['extended_pack_catalog_accessories_list']
+        tags:
+            - { name: 'pim_connector.array_converter.standard_to_flat.product.value_converter' }
+
+    extended_pack.array_converter.flat_to_standard.product.value_converter.accessories_list:
+        class: '%extended_pack.array_converter.flat_to_standard.accessories_list.class%'
+        arguments:
+            - ['extended_pack_catalog_accessories_list']
+        tags:
+            - { name: 'pim_connector.array_converter.flat_to_standard.product.value_converter' }

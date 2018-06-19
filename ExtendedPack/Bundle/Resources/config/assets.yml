@@ -1,0 +1,3 @@
+css:
+    extended_pack:
+        - bundles/extendedpack/css/accessories-list.less

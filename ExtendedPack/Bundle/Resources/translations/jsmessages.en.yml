@@ -1,0 +1,23 @@
+extended_pack_catalog_accessories_list: Extended Pack
+pim_enrich.entity.attribute.type.extended_pack_catalog_accessories_list: Extended Pack
+
+pim_enrich:
+    entity:
+        attribute:
+            type:
+                extended_pack_catalog_accessories_list: Extended Pack
+    form:
+        product:
+            tab:
+                attributes:
+                    accessories_list_item:
+                        add_item: Add item
+                        title: Title
+
+        attribute:
+            tab:
+                properties:
+                    label:
+                        min_number_of_list_items: Minimum number of accessories list items
+                        max_number_of_list_items: Maximum number of accessories list items
+                        title_max_characters: Title maximum length

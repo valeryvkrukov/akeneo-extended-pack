@@ -1,0 +1,9 @@
+extended_pack_rest_search:
+    path: /ext-pack/rest/accessories/products-list
+    defaults: { _controller: extended_pack.controller.products_list:searchAction }
+    methods: [GET]
+
+extended_pack_rest_load:
+    path: /ext-pack/rest/accessories/product/{id}
+    defaults: { _controller: extended_pack.controller.products_list:loadAction }
+    methods: [POST]

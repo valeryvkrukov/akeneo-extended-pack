@@ -1,0 +1,2 @@
+parameters:
+    extended_pack_catalog.entity.value.accessories_list.class: ExtendedPack\Bundle\Value\AccessoriesListValue

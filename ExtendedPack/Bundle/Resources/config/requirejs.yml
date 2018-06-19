@@ -1,0 +1,19 @@
+config:
+    paths:
+        extended-pack/accessories-list-form: extendedpack/js/product/form/accessories-list
+        extended-pack/accessories-list-field: extendedpack/js/product/field/accessories-list-field
+        extended-pack/templates/product/field/accessories-list: extendedpack/templates/product/field/accessories-list.html
+        extended-pack/templates/product/field/accessories-list-item: extendedpack/templates/product/field/accessories-list-item.html
+    
+    config:
+        pim/form/common/attributes/create-button:
+            attribute_icons:
+                extended_pack_catalog_accessories_list: accessoriesList
+
+        pim/attribute-edit-form/type-specific-form-registry:
+            formNames:
+                extended_pack_catalog_accessories_list:
+                    create: extended-pack-catalog-accessories-list
+                    edit: extended-pack-catalog-accessories-list
+                    
+        pim/template/form/common/fields/select: pimenrich/templates/form/common/fields/select.html

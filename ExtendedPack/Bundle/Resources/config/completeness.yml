@@ -1,0 +1,8 @@
+parameters:
+    extended_pack.completeness.checker.accessories_list.class: ExtendedPack\Bundle\Completeness\Checker\AccessoriesListCompleteChecker
+
+services:
+    extended_pack.completeness.checker.accessories_list:
+        class: '%extended_pack.completeness.checker.accessories_list.class%'
+        tags:
+            - { name: pim_catalog.completeness.checker.product_value, priority: 100 }

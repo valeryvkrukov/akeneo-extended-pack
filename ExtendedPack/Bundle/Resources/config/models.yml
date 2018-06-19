@@ -1,0 +1,3 @@
+parameters:
+    extended_pack_catalog.model.accessories_list.class: ExtendedPack\Bundle\Model\AccessoriesList
+    extended_pack_catalog.model.accessories_list_item.class: ExtendedPack\Bundle\Model\AccessoriesListItem

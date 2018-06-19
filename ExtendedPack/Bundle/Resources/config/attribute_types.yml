@@ -1,0 +1,10 @@
+parameters:
+    extended_pack.attribute_type.accessories_list.class: ExtendedPack\Bundle\AttributeType\AccessoriesListType
+
+services:
+    extended_pack.attribute_type.accessories_list:
+        class: "%extended_pack.attribute_type.accessories_list.class%"
+        arguments:
+            - accessories_list
+        tags:
+            - { name: pim_catalog.attribute_type, alias: extended_pack_catalog_accessories_list, entity: "%pim_catalog.entity.product.class%" }

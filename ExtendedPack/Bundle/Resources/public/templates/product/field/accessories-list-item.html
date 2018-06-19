@@ -1,0 +1,41 @@
+<li>
+	<div class="AccessoriesListItem-actions">
+		<div class="AknIconButton AknIconButton--small item-reorder"><i class="icon-reorder"></i></div>
+		<% if (editMode === 'edit') { %>
+			<div class="AknIconButton AknIconButton--small item-remove"><i class="icon-remove"></i>
+		<% } %>
+		</div>
+	</div>
+	<div class="AccessoriesListItem">
+		<div class="AccessoriesListItem-col1">
+			<div class="AknMediaField-thumb file">
+				<% if (value.imageUrl) { %>
+					<% mediaThumbnailUrl = mediaUrlGenerator.getMediaShowUrl(value.imageUrl, 'thumbnail_small') %>
+	            <% } else { %>
+	            	<% mediaThumbnailUrl = mediaUrlGenerator.getMediaShowUrl(null, 'thumbnail_small') %>
+	            <% } %>
+            	<img src="<%= mediaThumbnailUrl %>" class="AknMediaField-image"/>
+            </div>
+		</div>
+		<div class="AccessoriesListItem-col2">
+			<div class="AccessoriesListItem-field">
+				<div class="AknWidget-header"><%- value.title %></div>
+				<% if (value.description) { %>
+				<div class="AknWidget-subTitle">Short description</div>
+				<div class="AknWidget-content AknWidget-content--withPadding">
+					<%- value.description %>
+				</div>
+				<hr/>
+				<% } else { %>
+				<br/>
+				<% } %>
+				<div class="AknFieldContainer-inputContainer">
+					<div class="AknPriceList AknPriceList--right">
+						<input type="text" class="AknTextField AknTextField--noRightRadius AccessoriesListItem-input" value="<%- value.qty %>" <%- editMode === 'view' ? 'disabled' : '' %> />
+						<span class="AknPriceList-currency AccessoriesListItem-qty">QTY</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</li>

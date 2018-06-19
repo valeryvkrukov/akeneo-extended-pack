@@ -1,0 +1,8 @@
+parameters:
+    extended_pack.provider.field.accessories_list.class: ExtendedPack\Bundle\Provider\Field\AccessoriesListProvider
+
+services:
+    extended_pack.provider.field.accessories_list:
+        class: '%extended_pack.provider.field.accessories_list.class%'
+        tags:
+            - { name: pim_enrich.provider.field, priority: 100 }

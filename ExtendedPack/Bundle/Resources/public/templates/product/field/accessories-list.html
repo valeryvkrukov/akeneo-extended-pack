@@ -1,0 +1,22 @@
+<div class="AknFormContainer AknFormContainer--expanded">
+	<ul class="AccessoriesList"></ul>
+
+	<% if (editMode === 'edit') { %>
+	<div class="AknFieldContainer">
+		<div class="AknFieldContainer-header">
+			<label class="AknFieldContainer-label control-label">Select Inner Product</label>
+		</div>
+		<div class="AknFieldContainer-footer">
+			<div class="AknFieldContainer-inputContainer">
+				<div class="select2"></div>
+			</div>
+			<hr/>
+			<div class="AknButtonList AknButtonList--right">
+				<div class="AknButton AknButton--small item-add">
+					<%- _.__('pim_enrich.form.product.tab.attributes.accessories_list_item.add_item')%>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% } %>
+</div>

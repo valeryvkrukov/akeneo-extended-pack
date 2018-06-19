@@ -1,0 +1,11 @@
+parameters:
+    extended_pack_catalog.updater.setter.accessories_list_value.class: ExtendedPack\Bundle\Updater\Setter\AccessoriesListAttributeSetter
+
+services:
+    extended_pack_catalog.updater.setter.accessories_list_value:
+        class: "%extended_pack_catalog.updater.setter.accessories_list_value.class%"
+        parent: pim_catalog.updater.setter.abstract
+        arguments:
+            - ['extended_pack_catalog_accessories_list']
+        tags:
+            - { name: 'pim_catalog.updater.setter' }

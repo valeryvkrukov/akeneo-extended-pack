@@ -1,0 +1,10 @@
+parameters:
+    extended_pack_catalog.comparator.attribute.accessories_list.class: ExtendedPack\Bundle\Comparator\Attribute\AccessoriesListComparator
+
+services:
+    extended_pack_catalog.comparator.attribute.accessories_list:
+        class: '%extended_pack_catalog.comparator.attribute.accessories_list.class%'
+        arguments:
+            - ['extended_pack_catalog_accessories_list']
+        tags:
+            - { name: pim_catalog.attribute.comparator }

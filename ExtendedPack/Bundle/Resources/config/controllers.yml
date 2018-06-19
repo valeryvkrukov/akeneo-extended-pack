@@ -1,0 +1,8 @@
+parameters:
+    extended_pack.controller.products_list.class: ExtendedPack\Bundle\Controller\AccessoriesListProductsController
+
+services:
+    extended_pack.controller.products_list:
+        class: "%extended_pack.controller.products_list.class%"
+        arguments:
+            - '@service_container'
