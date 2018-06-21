@@ -22,6 +22,7 @@ class AccessoriesListAttributeSetter extends AbstractAttributeSetter
 		$values = [];
 		foreach ($data as $item) {
 			$values[] = [
+                'productId' => isset($item['productId'])? $item['productId']: null,
 				'imageUrl' => isset($item['imageUrl'])? $item['imageUrl']: null,
 				'title' => $item['title'],
 				'description' => isset($item['description'])? $item['description']: null,
@@ -50,6 +51,14 @@ class AccessoriesListAttributeSetter extends AbstractAttributeSetter
     		if (!is_array($item)) {
                 throw InvalidPropertyTypeException::arrayOfArraysExpected(
                     $attribute->getCode(),
+                    static::class,
+                    $data
+                );
+            }
+            if (!array_key_exists('productId', $item)) {
+                throw InvalidPropertyTypeException::arrayKeyExpected(
+                    $attribute->getCode(),
+                    'productId',
                     static::class,
                     $data
                 );

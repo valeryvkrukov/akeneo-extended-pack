@@ -50,6 +50,7 @@ class AccessoriesListValueFactory implements ValueFactoryInterface
     	foreach ($data as $item) {
     		try {
     			$listItem = new $this->accessoriesListItemClass();
+                $listItem->setProductId((isset($item['productId'])? $item['productId']: null));
                 $listItem->setImageUrl((isset($item['imageUrl'])? $item['imageUrl']: null));
     			$listItem->setTitle($item['title']);
                 $listItem->setDescription((isset($item['description'])? $item['description']: null));

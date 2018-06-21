@@ -177,7 +177,7 @@ define([
 							if (resp.product) {
 								var data = that.getCurrentValue().data;
 								var item = {
-									id: resp.product.id,
+									productId: resp.product.id,
 									imageUrl: resp.product.imageUrl,
 									title: resp.product.title,
 									description: resp.product.description,

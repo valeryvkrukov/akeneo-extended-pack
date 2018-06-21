@@ -4,5 +4,7 @@ parameters:
 services:
     extended_pack_catalog.normalizer.standard.accessories_list_item:
         class: '%extended_pack_catalog.normalizer.standard.accessories_list_item.class%'
+        arguments:
+            - '@service_container'
         tags:
             - { name: pim_serializer.normalizer, priority: 90 }

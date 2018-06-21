@@ -29,6 +29,7 @@ class AccessoriesListNormalizer extends AbstractProductValueNormalizer implement
         }
         foreach ($collection as $item) {
         	$indexedCollection[] = [
+        		'productId' => $item->getProductId(),
         		'imageUrl' => $item->getImageUrl(),
 				'title' => $item->getTitle(),
 				'description' => $item->getDescription(),

@@ -3,10 +3,22 @@ namespace ExtendedPack\Bundle\Model;
 
 class AccessoriesListItem
 {
+	protected $productId;
 	protected $imageUrl;
 	protected $title;
 	protected $description;
 	protected $qty;
+
+	public function getProductId()
+	{
+		return $this->productId;
+	}
+
+	public function setProductId($productId): self
+	{
+		$this->productId = $productId;
+		return $this;
+	}
 
     public function getImageUrl(): ?string
 	{
