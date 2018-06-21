@@ -1,0 +1,29 @@
+{
+    "name": "guidance/akeneo-extended-pack",
+    "description": "Extended Pack attribute for Akeneo v2.+",
+    "keywords": ["akeneo", "pim", "attribute", "collection"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Valery Krukov",
+            "email": "valery.v.krukov@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/guidance/akeneo-extended-pack.git"
+        }
+    ],
+    "require": {
+        "akeneo/pim-community-dev": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ExtendedPack\\Bundle\\": "."
+        }
+    },
+    "minimum-stability": "dev"
+}
