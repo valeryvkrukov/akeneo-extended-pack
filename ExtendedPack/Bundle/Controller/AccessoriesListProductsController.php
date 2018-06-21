@@ -66,6 +66,11 @@ class AccessoriesListProductsController
 					$response['product'][$respCode] = null;
 				}
 			}
+			foreach ($product->getValues() as $value) {
+				if ($value->getAttribute()->getCode() === 'description' && $value->getScope() === 'ecommerce') {
+					$response['product']['description'] = $value->__toString();
+				}
+			}
 			$response['product']['id'] = $product->getId();
 			$response['product']['imageUrl'] = $product->getImage() !== null? $product->getImage()->__toString(): null;
 		}
