@@ -43,7 +43,7 @@ class AccessoriesListItemNormalizer implements NormalizerInterface
 			$product = $productCursor->current();
 			if ($product) {
 				$item['imageUrl'] = $product->getImage() !== null? $product->getImage()->__toString(): null;
-				$item['title'] = $product->getValue('name', null, null) !== null? $product->getValue('name', null, null)->__toString(): null;
+				$item['title'] = $product->getValue('sku', null, null) !== null? $product->getValue('sku', null, null)->__toString(): null;
 				foreach ($product->getValues() as $value) {
 					if ($value->getAttribute()->getCode() === 'description' && $value->getScope() === 'ecommerce') {
 						$item['description'] = $value->__toString();
