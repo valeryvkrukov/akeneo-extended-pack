@@ -29,13 +29,13 @@ class AccessoriesListProductsController
 					$offset = $request->get('page') != null? intval($request->get('page')) * $limit: 0;
 					$pqbFactory = $this->container->get('pim_catalog.query.product_query_builder_factory');
 					$pqb = $pqbFactory->create(['default_locale' => 'en_US', 'default_scope' => 'ecommerce']);
-					$pqb->addFilter('name', 'STARTS WITH', $search);
+					$pqb->addFilter('sku', '=', $search);
 					$productsCursor = $pqb->execute();
 					$response['results'] = [];
 					foreach ($productsCursor as $product) {
 						$response['results'][] = [
 							'id' => $product->getId(),
-							'text' => $product->getValue('name', null, null)->__toString(),
+							'text' => $product->getValue('sku', null, null)->__toString(),
 						];
 					}
 				}
@@ -56,8 +56,7 @@ class AccessoriesListProductsController
 			$product = $productCursor->current();
 			$attributeCodes = $product->getUsedAttributeCodes();
 			$productModel = [
-				'title' => 'name', 
-				'description' => 'description',
+				'title' => 'sku'
 			];
 			foreach ($productModel as $respCode => $attrCode) {
 				if (in_array($attrCode, $attributeCodes)) {
@@ -66,13 +65,13 @@ class AccessoriesListProductsController
 					$response['product'][$respCode] = null;
 				}
 			}
-			foreach ($product->getValues() as $value) {
-				if ($value->getAttribute()->getCode() === 'description' && $value->getScope() === 'ecommerce') {
-					$response['product']['description'] = $value->__toString();
-				}
-			}
+			// foreach ($product->getValues() as $value) {
+			// 	if ($value->getAttribute()->getCode() === 'description') {
+			// 		$response['product']['description'] = $value->__toString();
+			// 	}
+			// }
 			$response['product']['id'] = $product->getId();
-			$response['product']['imageUrl'] = $product->getImage() !== null? $product->getImage()->__toString(): null;
+			// $response['product']['imageUrl'] = $product->getImage() !== null? $product->getImage()->__toString(): null;
 		}
 		return $this->sendJsonResponse($response);
 	}
